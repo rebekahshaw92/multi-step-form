@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+
+  <div class="mainBody">
+    <!-- Sidebar start -->
+  <header class="sidebar">
+    <nav>
+      <ol class="d-flex justify-conntent-center text-uppercase" id="sidebarOl">
+       <li class="d-flex sidebarLi activeSidebar">
+        <div class="sidebarText">
+          <p>Step 1</p> 
+          <h3>Your info</h3>
+        </div>
+       </li> 
+       <li class="d-flex sidebarLi">
+        <div class="sidebarText">
+          <p>Step 2</p>
+          <h3>Select plan</h3>
+        </div>
+       </li> 
+       <li class="d-flex sidebarLi">
+        <div class="sidebarText">
+          <p>Step 3</p>
+          <h3>Add-ons</h3>
+        </div>
+       </li> 
+       <li class="d-flex sidebarLi">
+        <div class="sidebarText">
+          <p>Step 4</p>
+          <h3>Summary</h3>
+        </div>
+       </li>
+      </ol>
+    </nav>
+  </header>
+  <!-- Sidebar end -->
+
+  <main>
+<form id="cardForm">
+ 
+  <!-- Step 1 start -->
+
+  <div class="step card" id="stage1">
+    <h1 class="card-title">Personal info</h1>
+    <p class="card-text">Please provide your name, email address, and phone number.</p>
+
+
+    <div class="mainForm" id="myForm">
+      <div class="mb-3">
+        <div class="row">
+          <div class="col">
+        <label for="InputName1" class="form-label">Name</label>
+        </div>
+        <div class="col">
+        <p class="text-end" id="errorName"></p>
+        </div>
+        </div>
+        <input type="text" class="form-control" id="InputName1" placeholder="e.g. Stephen King">
+      </div>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col">
+        <label for="InputEmail1" class="form-label">Email Address</label>
+        </div>
+        <div class="col">
+        <p class="text-end" id="errorEmail"></p>
+        </div>
+        </div>
+        <input type="text" class="form-control" id="InputEmail1" placeholder="e.g. stephenking@lorem.com">
+      </div>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col">
+        <label for="InputPhone1" class="form-label">Phone Number</label>
+        </div>
+        <div class="col">
+          <p class="text-end" id="errorPhone"></p>
+          </div>
+        </div>
+        <input type="text" class="form-control" id="InputPhone1" placeholder="e.g. +1 234 567 890">
+      </div>
+ </div>
+  </div>
+     <!-- Step 1 end -->
+
+    <!-- Step 2 start -->
+
+    <div class="step card hidden" id="stage2">
+      <h1 class="card-title">Select your plan</h1>
+      <p class="card-text">You have the option of monthly or yearly billing.</p>
+
+      <ul class="d-flex flex-column flex-lg-row justify-content-between" id="plan">
+        <li id="chosenPlan" class="activePlan" data-plan="arcade" data-add-price="9">
+            <img class="icon" src="assets/images/icon-arcade.svg" alt="arcade">
+            <h1 class="mainPlanName">Arcade</h1>
+            <p class="monthly">$9/mo</p>
+            <p class="yearly hidden">$90/yr</p>
+            <p class="yearly hidden">2 months free</p>
+        </li>
+
+        <li id="chosenPlan" data-plan="advanced" data-add-price="12">
+          <img class="icon" src="assets/images/icon-advanced.svg" alt="Advanced">
+          <h1 class="mainPlanName">Advanced</h1>
+          <p class="monthly">$12/mo</p>
+          <p class="yearly hidden">$120/yr</p>
+            <p class="yearly hidden month">2 months free</p>
+      </li>
+
+      <li id="chosenPlan" data-plan="pro" data-add-price="15">
+        <img class="icon" src="assets/images/icon-pro.svg" alt="pro">
+        <h1 class="mainPlanName">Pro</h1>
+        <p class="monthly">$15/mo</p>
+        <p class="yearly hidden">$150/yr</p>
+        <p class="yearly hidden month">2 months free</p>
+    </li>
+    </ul>
+
+    <div class="toggle d-flex justify-content-center">
+    
+      <label class="form-check-label" for="switch">Monthly</label>
+    <label class="switch">
+      <input type="checkbox" id="switch">
+      <span class="slider round"></span>
+    </label>
+    <label class="form-check-label" for="switch">Yearly</label>
+</div>
+     </div>
+       <!-- Step 2 end -->
+  
+    <!-- Step 3 start -->
+
+    <div class="step card hidden" id="stage3">
+            <h1 class="card-title">Pick add-ons</h1>
+      <p class="card-text">Add-ons help enhance your gaming experience.</p>
+     
+
+            <div class="form-check option1 d-flex justify-content-start" id="storage">
+              <input class="form-check-input" type="checkbox" data-add="Online service" data-add-price="1" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                <h1>Online service</h1>
+                <p class="monthlyAccess">Access to multiplayer games</p>
+              </label>
+            <p class="monthlyStage3">+$1/mo</p>
+            <p class="yearlyStage3 hidden">+$10/yr</p>
+            </div>
+        
+            <div class="form-check option2 d-flex justify-content-start" id="storage">
+              <input class="form-check-input" type="checkbox" data-add="Larger storage" data-add-price="2" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+         <h1>Larger storage</h1>
+         <p class="monthlyAccess">Extra 1TB of cloud save</p>
+         </label>
+         <p class="monthlyStage3">+$2/mo</p>
+       
+         <p class="yearlyStage3 hidden">+$10/yr</p>
+            </div>
+
+            <div class="form-check option3 d-flex justify-content-start" id="storage">
+              <input class="form-check-input" type="checkbox" data-add="Customizable Profile" data-add-price="2" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+         <h1>Customizable Profile</h1>
+         <p class="monthlyAccess">Custom theme on your profile</p>
+         </label>
+         <p class="monthlyStage3">+$2/mo</p>
+       
+         <p class="yearlyStage3 hidden">+$10/yr</p>
+            </div>
+
+
+    </div>
+
+     <!-- Step 3 end -->
+
+     <!-- Step 4 start -->
+
+     <div class="step card hidden" id="stage4">
+      <h1 class="card-title">Finishing up</h1>
+      <p class="card-text">Double-check everything looks OK before confirming.</p>
+        <ul class="mainPlan">
+           <li class="stage4List">
+              <ul class="mainPlanDetails d-flex">
+               <li class="plan">
+                  <div class="planType">
+                    <h1 class="planName"></h1>
+                    <button class="btn btn-primary changePlan" type="button" onclick="changePlan()">Change</button>
+                  </div>
+                  <p class="planPrice"></p>
+              </li>
+          </ul>
+        </li>
+        
+        <li class="totalPrice d-flex">
+          <h1 id="totalPrice"></h1>
+          <p class="totalPricePrice"></p>
+        </li>
+      </ul>
+</div>
+  <!-- Step 4 end -->
+
+ <!-- Step 5 start -->
+<div class="step card hidden" id="thankYou">
+  <img src="assets/images/icon-thank-you.svg" class="thankYouIcon rounded mx-auto d-block" alt="check">
+
+  <h1 class="thankYouTitle text-center">Thank you!</h1>
+
+  <p class="thankYouSubText text-center">Thanks for confirming your subscription! We hope you have fun 
+    using our platform. If you ever need support, please feel free 
+    to email us at support@loremgaming.com.</p>
+</div>
+<!-- Step 5 end -->
+
+  <div class="d-flex justify-content-between mainButtons">
+
+   <button type="submit" class="btn btn-primary btnBack hidden" id="backBtn">Go Back</button>
+ 
+  <button type="submit" class="btn btn-primary btnNext" id="nextBtn">Next Step</button>
+
+  <button type="submit" class="btn btn-primary btnNext hidden" id="confirmBtn">Confirm</button>
+
+</div>
+
+
+</form>
+</main>
+</div>
+
+
+
+  
+  
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="https://rebekahshaw.com" target="_blank">Rebekah Shaw</a>.
+</div>
+</body>
+
+
+<script type="text/javascript" src="js/script.js"></script>
+
+</html>

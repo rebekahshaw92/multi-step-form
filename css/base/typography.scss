@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+$font: 'Ubuntu', sans-serif;
+$coolGray: hsl(231, 11%, 63%);
+$magnolia: hsl(217, 100%, 97%);
+$marineBlue: hsl(213, 96%, 18%);
+$lightGray: hsl(229, 24%, 87%);
+$strawberryRed: hsl(354, 84%, 57%);
+$purplishBlue: hsl(243, 100%, 62%);
+
+body {
+    font-family: $font;
+}
+
+.card-title {
+    margin: 5%;
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+    color: $marineBlue;
+    font-weight: 700;
+    @include media-breakpoint-up(lg) {
+        font-size: 1.6rem;
+    }
+}
+
+.card-text {
+    margin-left: 5%;
+    margin-right: 15%;
+    width: 70%;
+    font-size: 1.1rem;
+    color: $coolGray;
+    //font-weight: 700;
+    @include media-breakpoint-up(lg) {
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+#stage1 {
+    & label {
+        font-size: 1rem;
+    }
+}
+
+#errorName, #errorEmail, #errorPhone {
+    color: $strawberryRed;
+    font-size: 1rem;
+}
+
+.planName {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+  }
+
+.plan {
+    & h1 {
+        font-size: 1rem;
+        color: $marineBlue;
+        font-weight: 700;
+    }
+    & p {
+        font-size: 1.1rem;
+        color: $marineBlue;
+        font-weight: 700;
+    }
+}
+
+.sub-text {
+    color: $coolGray;
+    font-size: 1rem;
+}
+
+.sub-text2 {
+    color: $marineBlue;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+#totalPrice {
+    color: $coolGray;
+    font-size: 1rem;
+}
+
+.totalPricePrice {
+    color: $purplishBlue;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.thankYouTitle {
+    padding-top: 5%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $marineBlue;
+}
+
+.thankYouSubText {
+    padding: 10%;
+    padding-top: 2%;
+    font-size: 1.1rem;
+    color: $coolGray;
+    @include media-breakpoint-up(lg) {
+        padding-left: 5%;
+        font-size: 1rem;
+        padding-right: 5%;
+    
+    }
+}

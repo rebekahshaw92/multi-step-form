@@ -1,0 +1,403 @@
+$marineBlue: hsl(213, 96%, 18%);
+$lightBlue: hsl(206, 94%, 87%);
+$pastelBlue: hsl(228, 100%, 84%);
+$coolGray: hsl(231, 11%, 63%);
+$lightGray: hsl(229, 24%, 87%);
+$magnolia: hsl(217, 100%, 97%);
+$white: hsl(0, 0%, 100%);
+$strawberryRed: hsl(354, 84%, 57%);
+$alabaster: hsl(231, 100%, 99%);
+$purplishBlue: hsl(243, 100%, 62%);
+$alabaster: hsl(231, 100%, 99%);
+
+
+body {
+    @include media-breakpoint-up(lg) {
+        background-color: $magnolia;
+    }
+}
+
+.mainBody {
+    background-color: $magnolia;
+    height: 900px;
+    position: relative;
+    @include media-breakpoint-up(lg){
+        background-color: $white;
+        margin: auto;
+        margin-top: 5%;
+        width: 70%;
+        display: flex;
+        height: 640px;
+        padding: 1rem;
+        border-radius: 10px;         
+        box-shadow: 1px 2px 10px 2px $lightGray;
+     }
+ }
+
+main {
+    margin: 0.1rem;       
+    width: 100%;
+    //padding:0;
+    @include media-breakpoint-up(lg){
+        display: block;
+        margin: 0;
+        width: 100%;
+        padding: 0;
+      //  background-color: $white;
+    }
+}
+
+.card {
+   position: relative;
+     margin: 0 auto;
+    padding: 0 auto;
+    margin-top: -17%;
+    width: 92%;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 1px 5px 10px 1px $lightGray;
+     @include media-breakpoint-up(lg){
+        box-shadow: none;
+        margin-top: 0;
+        margin-left: 15%;
+        height: 100%;
+        width:70%;
+     }
+}
+
+.form-control {
+    cursor: pointer;
+    &:focus {
+        box-shadow:none;
+    outline: 1px solid $pastelBlue !important;
+    }
+    &::placeholder{
+    color: $coolGray !important;
+    }
+}
+
+
+#stage2 {
+    height: 600px;
+    @include media-breakpoint-up(lg){
+        height: 100%;
+    }
+}
+
+#stage3 {
+    height: 400px;
+}
+
+.mainForm {
+    margin: 5%;
+    margin-top: 3%;
+    font-size: 1rem;
+    color: $marineBlue;
+    font-weight: 700;
+}
+
+.btnNext {
+    background-color: $marineBlue;
+    border-color: $marineBlue;
+    margin: 5%;
+    padding: 0.85rem 1.25rem;
+    color: $white;
+    border-radius: 5px;
+    margin-left: auto;
+    @include media-breakpoint-up(lg){
+        padding: 0.45rem 0.85rem;
+        margin-top: 13%;
+        margin-right: 18%;
+    }
+    &:hover{
+        background-color:hsla(243, 100%, 62%, 0.6);
+    }
+}
+
+ .error {
+    border: 1px solid $strawberryRed;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+#plan {
+   gap: 0.5rem;
+   padding: 5%;
+   padding-top: 2%;
+   @include media-breakpoint-up(lg) {
+    gap: 1rem;
+   }
+    & li {
+        border: 1px solid $lightGray;
+        border-radius: 10px;
+        padding: 5%;
+        gap: 0.2rem;
+        list-style: none;
+        cursor: pointer;
+        &:hover {
+            border: 1px solid $purplishBlue !important;
+        }
+        @include media-breakpoint-up(lg){
+            display: flex;
+            flex-direction: column;
+            flex-basis: 33%;
+        }
+        & img {
+            float: left;
+            margin: 0 1rem 0 0;
+            width: 2.5rem;
+            @include media-breakpoint-up(lg) {
+                margin: 0 0 2.5rem;
+            }
+        }
+        & h1 {
+            font-size: 1rem;
+        }
+        & .monthly, .yearly {
+            color: $coolGray;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+            @include media-breakpoint-up(lg){
+                margin: 0;
+            }
+        }
+        & > *:last-child {
+            color: $marineBlue;
+            font-size: 0.85rem;
+            margin: 0rem 3.5rem;
+            @include media-breakpoint-up(lg) {
+                margin: 0;
+            }
+        }
+    }
+}
+
+ #storage {
+    gap: 1rem;
+    margin: 5%;
+    margin-bottom: 0;
+    margin-top: 0;  
+    margin-bottom: 1rem;
+    border: 1px solid $lightGray;
+    height: 70px;
+    border-radius: 10px;
+    &:hover {
+        border: 1px solid $purplishBlue !important;
+    }
+    & label {
+        margin-top: 2%;
+        margin-right: auto;
+    }
+
+    & > * {
+        &:hover {
+            cursor: pointer;
+            
+        }
+    }
+    & h1 {
+        font-size: 1rem;
+        color: $marineBlue;
+        font-size: 700;
+        margin-top: 3%;
+        margin-bottom: 2%;
+    }
+    & #flexCheckDefault {
+        position: relative;
+        margin-left: 2px;
+        margin-top: 8%;
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        }
+        & .monthlyAccess {
+            color: $coolGray;
+            font-size: 0.9rem;
+            
+        }
+        & .monthlyStage3, .yearlyStage3 {
+            margin-top: 8%;
+            margin-right: 5%;
+            color: $purplishBlue;
+            
+        }
+    }
+
+
+.toggle {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 3%;
+    background-color: $magnolia;
+    align-items: center !important;
+    label {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+    @include media-breakpoint-up(lg){
+        margin-top: 3%;
+    }
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+  }
+
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background: $marineBlue;
+    transition: transform 0.4s, opacity 0.15s;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+  }
+
+  .slider.round {
+    border-radius: 34px;
+    &:before {
+        border-radius: 50%;
+      }
+  }
+
+  .switch:hover .slider,
+.switch input:focus + .slider {
+    opacity: 0.5;
+}
+
+    
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .activePlan {
+   background-color: $alabaster;
+   border: 1px solid $purplishBlue !important;
+  }
+
+  .btnBack {
+    background: none;
+    border: none;
+    position: absolute;
+    padding: 0.85rem 0;
+    color: $coolGray;
+    margin: 5%;
+    @include media-breakpoint-up(lg){
+        margin: 3%;
+        margin-left: 14%;
+        margin-top: 8%;
+    }
+    &:hover{
+        color: $marineBlue !important;
+        background: none;
+        border: none;
+    }
+  }
+
+  .stage4List {
+    list-style: none;
+  }
+   .mainPlanDetails {
+    list-style: none;
+    padding: 1rem;
+    box-shadow: 0px 1px 5px 2px $magnolia;
+    border-radius: 10px;
+    background-color: $alabaster;
+    flex-direction: column !important;
+    gap: 1rem;
+    & > * {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:first-child {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $lightGray;
+        }
+        & .changePlan {
+            border: none;
+            background-color: transparent;
+            color: $coolGray;
+            text-decoration: underline;
+            font-size:  1rem;
+            padding: 0;
+            padding-top: 0.1rem;
+            &:hover {
+                color: $purplishBlue;
+            }
+        }
+    }
+  }
+
+ 
+
+  .add {
+    list-style: none;
+    padding: 0;
+  }
+
+  .totalPrice {
+    list-style: none;
+    justify-content: space-between;
+    padding: 2rem 1rem 0;
+  }
+
+  .mainPlan {
+    padding: 1rem;
+  }
+
+  .thankYouIcon {
+    padding-top: 10%;
+    width: 60px;
+    @include media-breakpoint-up(lg) {
+        padding-top: 30%;
+    }
+  }
+
+  #thankYou {
+    height: 350px;
+  }
+
+  .mainButtons {
+    background-color: $white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 95px;
+    @include media-breakpoint-up(lg){
+        position: static;
+        height: 100%;
+        padding:0 0 1rem;
+    }
+  }
+
